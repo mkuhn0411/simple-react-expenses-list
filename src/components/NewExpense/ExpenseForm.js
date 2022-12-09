@@ -48,9 +48,6 @@ const ExpenseForm = props => {
         props.handleExpenseModal(boolean);
     }
 
-    if (!props.newExpense) {
-        return <button onClick={() => addExpenseHandler(true)}>Add New Expense</button>
-    }
 
     return (
         <form onSubmit={submitHandler}> 
@@ -85,8 +82,8 @@ const ExpenseForm = props => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button onClick={() => addExpenseHandler(false)}>Cancel</button>
-                <button type="submit">Add Expense</button>
+                <button type="button" onClick={() => addExpenseHandler(false)}>Cancel</button>
+                <button type="submit" onClick={() => addExpenseHandler(false)}>Add Expense</button>
             </div>
         </form>
     )

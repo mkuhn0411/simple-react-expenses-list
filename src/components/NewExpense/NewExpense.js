@@ -20,7 +20,8 @@ const NewExpense = (props) => {
 
     return (
         <div className="new-expense">
-            <ExpenseForm handleExpenseModal={setExpenseModal} newExpense={expenseOpen} onSaveExpenseData={saveExpenseDataHandler}/>
+            {!expenseOpen && <button onClick={() => setExpenseModal(true)}>Add new expense</button>}
+            {expenseOpen && <ExpenseForm handleExpenseModal={setExpenseModal} newExpense={expenseOpen} onSaveExpenseData={saveExpenseDataHandler}/>}
         </div>
     )
 }
